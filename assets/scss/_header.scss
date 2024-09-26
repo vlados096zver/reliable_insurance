@@ -1,0 +1,120 @@
+header {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+
+    &.header {
+        padding: 50px 0;
+    }
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+
+.header__main {
+    display: flex;
+    gap: 70px;
+    align-items: center;
+
+    .btn-item {
+        span {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 58px;
+
+    .header__nav-item {
+        list-style: none;
+
+        .header__nav-link {
+            text-decoration: none;
+            &::after {
+                content: '';
+                display: block;
+                width: 0;
+                height: 2px;
+                background: #000;
+                transition: width .3s;
+            }
+
+            &:hover::after {
+                width: 100%;
+            }
+            span {
+                font-size: $font-xl;
+                text-transform: uppercase;
+            }
+
+            span {
+                color: #000;
+            }
+        }
+    }
+}
+
+.header__burger {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    background-color: #F08E65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    flex-shrink: 0;
+
+}
+
+.header__main-btn_close{
+    display: none;
+}
+
+
+@media (max-width: 1280px) {
+    header.header{
+        padding: 20px 0;
+    }
+    .header__main {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        padding: 100px 0;
+        z-index: 9;
+        &.header__main--active{
+            display: flex;
+        }
+        .header__nav{
+            flex-direction: column;
+        }
+        .header__main-btn_close{
+            display: block;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            svg{
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .header__burger {
+        display: flex;
+    }
+}
