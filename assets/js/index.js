@@ -175,3 +175,9 @@ function toggleMenu(isOpen) {
     headerMobMenu.classList.toggle('header__main--active', isOpen);
 }
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  AOS.init({
+    duration: 600,
+  })
+})
